@@ -5,47 +5,61 @@ html {
 }
 
 .container {
-  text-align: center;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: grid;
+  gap: 15px;
+  grid-template: 1fr 1fr 5fr 1fr / 1fr 3fr;
+  grid-template-areas: 
+    "header header"
+    "sidebar nav"
+    "sidebar article"
+    "footer footer";
   height: 100%;
   padding: 16px;
-  box-sizing: border-box;
+  text-align: center;
 }
 
 .container div {
-  padding: 15px;
+  border-radius: 15px;
+  color: white;
   font-size: 32px;
   font-family: Helvetica;
   font-weight: bold;
-  color: white;
-  border-radius: 15px;
+  padding: 15px;
 }
 
 .header {
   background-color: #006157;
+  grid-area: header;
   grid-column: 1 / 3;
 }
 
 .sidebar {
   background-color: #005B94;
+  grid-area: sidebar;
   grid-row: 2 / 4;
 }
 
 .nav {
   background-color: #642cde;
+  grid-area: nav;
 }
 
 .article {
   background-color: #7E1DC3;
+  grid-area: article;
 }
 
 .article p {
-  font-size: 18px;
-  font-family: sans-serif;
   color: white;
+  font-family: sans-serif;
+  font-size: 18px;
   text-align: left;
 }
 
 .footer {
   background-color: #393f4d;
+  grid-area: footer;
   grid-column: 1 / 3;
 }
